@@ -18,11 +18,7 @@ CLAUDE_API_KEY = st.secrets["CLAUDE_API_KEY"].strip()
 # --------------------------------------------------------------------
 
 client = Anthropic(api_key=CLAUDE_API_KEY)
-with st.expander("DEBUG temporário — remover depois"):
-    st.write(f"Prefixo: {CLAUDE_API_KEY[:15]}")
-    st.write(f"Sufixo: {CLAUDE_API_KEY[-4:]}")
-    st.write(f"Tamanho: {len(CLAUDE_API_KEY)}")
-    
+
 NOMES_INDICADORES = {
     "cambio_usd": "Câmbio (USD/BRL)",
     "selic": "Selic",
