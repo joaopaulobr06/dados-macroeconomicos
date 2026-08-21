@@ -7,14 +7,14 @@ from anthropic import Anthropic
 # ---------- Configuração — troque os valores abaixo pelos seus ----------
 st.set_page_config(page_title="Mercado Pecuário — Indicadores Macro", layout="wide")
 
-DB_HOST = "aws-0-us-east-2.pooler.supabase.com"
-DB_NAME = "postgres"
-DB_PORT = 5432
-DB_USER = "postgres.qlimuayqvvjvdimkytkl"
-DB_PASSWORD = "Joaopaulo06_"
-IA_DB_USER = "ia_readonly.qlimuayqvvjvdimkytkl"
-IA_DB_PASSWORD = "joaopaulo06"
-CLAUDE_API_KEY = "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"
+DB_HOST = st.secrets["DB_HOST"]
+DB_NAME = st.secrets["DB_NAME"]
+DB_PORT = st.secrets["DB_PORT"]
+DB_USER = st.secrets["DB_USER"]
+DB_PASSWORD = st.secrets["DB_PASSWORD"]
+IA_DB_USER = st.secrets["IA_DB_USER"]
+IA_DB_PASSWORD = st.secrets["IA_DB_PASSWORD"]
+CLAUDE_API_KEY = st.secrets["CLAUDE_API_KEY"].strip()
 # --------------------------------------------------------------------
 
 client = Anthropic(api_key=CLAUDE_API_KEY)
